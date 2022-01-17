@@ -97,7 +97,7 @@ function finalScore(inningcb, inning){
   return finalScore
 }
 
-console.log(finalScore(inning,4))
+console.log('task3', finalScore(inning,4))
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
@@ -153,11 +153,25 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningcb,scorecb,inning) {
+  const finalScore = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for(let i = 0; i < inning;  i++){
+    let currentScore = scorecb(inningcb);
+    homeScore += currentScore.Home;
+    awayScore += currentScore.Away;
+    finalScore.push(`Inning ${i + 1}: Away ${currentScore.Away} - Home ${currentScore.Home}`)
+  }
+  if(homeScore === awayScore){
+    finalScore.push(`This game will require extra innings: Away ${awayScore} - Home ${homeScore}`)
+  }else{
+    finalScore.push(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+  }
+  return finalScore
 }
 
-
+console.log(scoreboard(inning,getInningScore,9))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
