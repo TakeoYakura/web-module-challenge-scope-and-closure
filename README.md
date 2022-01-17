@@ -61,6 +61,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+closure is when you have a function inside of another function the inner function use the outer functions variables.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -82,9 +83,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+the inner function called function is the closure because its being returned in order to use the outer function personalDice variables.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+Dan's name is always the same, but the number he rolls can change.
 c. What is the lexical scope of `newRoll`? 
-
+newRoll scope is block scoped into function. It can only be used within that function and can't be taken out.
 
 ### Task 3 - Stretch Goals
 
